@@ -47,7 +47,6 @@
     <Compile Include="Address.cs" />
     <Compile Include="ApplicationUnitTest.cs" />
     <Compile Include="Business.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Dictionary.cs" />
     <Compile Include="ActiveRecordBase.cs" />
     <Compile Include="Person.cs" />
