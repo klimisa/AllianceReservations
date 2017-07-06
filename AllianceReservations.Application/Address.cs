@@ -25,5 +25,29 @@ namespace AllianceReservations.Application
             State = state;
             ZipCode = zipCode;
         }
+
+        public override bool Equals(object obj)
+        {
+            var o = obj as Address;
+            return
+                o != null &&
+                Street == o.Street && 
+                City == o.City &&
+                State == o.State &&
+                ZipCode == o.ZipCode;
+        }
+
+        public override int GetHashCode()
+        {
+            var startValue = 17;
+            var multiplier = 59;
+            
+            var hashCode = startValue;
+            hashCode = hashCode * multiplier + Street.GetHashCode();
+            hashCode = hashCode * multiplier + City.GetHashCode();
+            hashCode = hashCode * multiplier + State.GetHashCode();
+            hashCode = hashCode * multiplier + ZipCode.GetHashCode();
+            return hashCode;
+        }
     }
 }
